@@ -24,14 +24,13 @@ app.get("/files/data", async (req, res) => {
         }
       })
     );
-
-    console.log(
-      "formated files",
-      formattedFiles.filter((item) => item !== null)
-    );
-    res.send(formattedFiles.filter((item) => item !== null));
+    const jsonFiles = formattedFiles.filter((item) => item !== null);
+    res.send(jsonFiles);
   } catch (error) {
-    console.log("error! -->", error.response);
+    console.log(
+      "Error while making get request to /files/data",
+      error.response
+    );
     res.status(500).send(JSON.stringify(error.response));
   }
 });

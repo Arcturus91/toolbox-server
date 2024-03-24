@@ -9,7 +9,6 @@ const csvToJson = (csvData) => {
       return line;
     })
     .filter((item) => item !== null);
-  console.log("proper datalines", dataLines);
   if (dataLines.length === 0) console.log("dataline empty");
   const lines = dataLines
     .map((dataLine, idx) => {
@@ -25,8 +24,8 @@ const csvToJson = (csvData) => {
     .filter((item) => item !== null);
   const file = dataLines[0].split(",")[0];
 
-  console.log("response object", (responseObject = { file, lines }));
   if (lines.length === 0) return null;
+  console.log("response object", (responseObject = { file, lines }));
   return responseObject;
 };
 
