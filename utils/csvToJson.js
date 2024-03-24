@@ -9,7 +9,6 @@ const csvToJson = (csvData) => {
       return line;
     })
     .filter((item) => item !== null);
-  if (dataLines.length === 0) console.log("dataline empty");
   const lines = dataLines
     .map((dataLine, idx) => {
       const text = dataLine.split(",")[1];
