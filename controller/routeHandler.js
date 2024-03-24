@@ -5,6 +5,11 @@ const {
 } = require("../constants/constants");
 const csvToJson = require("../utils/csvToJson");
 
+const healthCheck = (req, res) => {
+  console.log("req received");
+  res.send("Hey, hi!");
+};
+
 const filesFormatter = async (req, res) => {
   try {
     const axiosFilesRes = await axios(requestAllFilesOptions);
@@ -33,4 +38,4 @@ const filesFormatter = async (req, res) => {
   }
 };
 
-module.exports = filesFormatter;
+module.exports = { filesFormatter, healthCheck };
