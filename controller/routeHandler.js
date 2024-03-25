@@ -50,9 +50,9 @@ const filesFormatter = async (req, res) => {
     } catch (error) {
       console.log(
         "Error while making get request to /files/data",
-        error.response
+        error.message
       );
-      res.status(500).send(JSON.stringify(error.response));
+      res.status(500).send(JSON.stringify(error.message));
     }
   }
 };
