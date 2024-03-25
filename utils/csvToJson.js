@@ -24,7 +24,7 @@ const csvToJson = (csvData) => {
   const file = dataLines[0].split(",")[0];
 
   if (lines.length === 0) return null;
-  console.log("response object", (responseObject = { file, lines }));
+  const responseObject = { file, lines };
   return responseObject;
 };
 
